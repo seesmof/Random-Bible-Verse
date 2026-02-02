@@ -29,7 +29,7 @@ export default function Home() {
       const result: Verse = await response.json();
       setVerse(result.text);
       setReference(
-        `${Bible_Book_number_to_name[result.book]} ${result.chapter}:${result.verse}`,
+        `${Bible_Book_number_to_name[result.book as keyof typeof Bible_Book_number_to_name]} ${result.chapter}:${result.verse}`,
       );
       setLink(
         `${baseBibleUrl}/${result.book}/${result.chapter}/${result.verse}`,
