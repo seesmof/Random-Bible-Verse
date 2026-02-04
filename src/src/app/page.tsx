@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div className="h-screen bg-sky-100 flex flex-col justify-center items-center p-3">
-      <div className="card bg-white">
+      <div className="card bg-white p-3 rounded-md">
         <div className="card-body">
           <p
             className="cursor-pointer"
