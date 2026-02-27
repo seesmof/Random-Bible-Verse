@@ -11,8 +11,8 @@ interface Verse {
   verse: number;
   text: string;
 }
-const url = "https://bolls.life/get-random-verse/UBIO/";
-const baseBibleUrl = "https://bolls.life/UBIO";
+const url = "https://bolls.life/get-random-verse/HOM/";
+const baseBibleUrl = "https://bolls.life/HOM";
 
 const copyVerse = (verseText: string, reference: string) => {
   navigator.clipboard.writeText(`${verseText} (${reference})`);
