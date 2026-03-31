@@ -11,17 +11,17 @@ interface Verse {
   verse: number;
   text: string;
 }
-const url = "https://bolls.life/get-random-verse/HOM/";
-const baseBibleUrl = "https://bolls.life/HOM";
+const url = "https://bolls.life/get-random-verse/UBIO/";
+const baseBibleUrl = "https://bolls.life/UBIO";
 
 const copyVerse = (verseText: string, reference: string) => {
   navigator.clipboard.writeText(`${verseText} (${reference})`);
 };
 
 export default function Home() {
-  const [verse, setVerse] = useState("");
-  const [reference, setReference] = useState("");
-  const [link, setLink] = useState("");
+  const [verse, setVerse] = useState<string>("");
+  const [reference, setReference] = useState<string>("");
+  const [link, setLink] = useState<string>("");
 
   useEffect(() => {
     async function startFetching() {
