@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Bible_Book_number_to_name } from "../data/consts";
+import { BibleBookNumberToName } from "../data/consts";
 
 interface Verse {
   primaryKey: number;
@@ -29,7 +29,7 @@ export default function Home() {
       const result: Verse = await response.json();
       setVerse(result.text);
       setReference(
-        `${Bible_Book_number_to_name[result.book as keyof typeof Bible_Book_number_to_name]} ${result.chapter}:${result.verse}`,
+        `${BibleBookNumberToName[result.book as keyof typeof BibleBookNumberToName]} ${result.chapter}:${result.verse}`,
       );
       setLink(
         `${baseBibleUrl}/${result.book}/${result.chapter}/${result.verse}`,
@@ -40,16 +40,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen bg-sky-100 flex flex-col justify-center items-center p-3">
-      <div className="card bg-white p-3 rounded-md">
-        <div className="card-body">
+    <div className="min-h-screen bg-sky-100 flex flex-col justify-center items-center p-3">
+      {verse && (
+        <div className="bg-white p-5 rounded-md shadow flex flex-col">
           <p
             className="cursor-pointer"
             onClick={() => copyVerse(verse, reference)}
           >
             {verse}
           </p>
-          <cite className="self-end">
+          <cite className="self-end mt-1">
             <a
               className="text-sm hover:underline underline-offset-2"
               href={link}
@@ -58,7 +58,7 @@ export default function Home() {
             </a>
           </cite>
         </div>
-      </div>
+      )}
     </div>
   );
 }

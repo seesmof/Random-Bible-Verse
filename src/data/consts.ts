@@ -1,4 +1,4 @@
-export const Bible_Book_number_to_name = {
+export const BibleBookNumberToName = {
   1: "Буття",
   2: "Вихід",
   3: "Левит",
